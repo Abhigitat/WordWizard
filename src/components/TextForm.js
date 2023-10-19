@@ -25,14 +25,13 @@ export default function TextForm(props) {
     }
     const cleartext=()=>{
         setText('');
-        props.showAlert("TextBox has been cleared","danger");
+        props.showAlert("TextBox is cleared","success");
     }
     const handelCopy=()=>{
         // let text=document.getElementById("myBox")
         // text.select();
         // document.execCommand("copy");
-        //navigator.clipboard.writeText(text);
-        navigator.clipboard.writeText(text); 
+        navigator.clipboard.writeText(text);
         props.showAlert("Text has Copied to Clipboard","success");
     }
     const handleRemoveTextSpace=()=>{
