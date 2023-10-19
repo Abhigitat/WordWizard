@@ -25,7 +25,7 @@ export default function TextForm(props) {
     }
     const cleartext=()=>{
         setText('');
-        props.showAlert("TextBox is cleared","success");
+        props.showAlert("TextBox is cleared","danger");
     }
     const handelCopy=()=>{
         // let text=document.getElementById("myBox")

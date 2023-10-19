@@ -44,7 +44,7 @@ function App() {
       <Navbar titles="WordWizard" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>
       <Alert alert={alert}/>
       <Routes>
-          <Route path="/about" element={<About />}/>
+          <Route path="/about" element={<About mode={mode} toggleMode={toggleMode}/>}/>
   
           <Route path="/" element={
             <TextForm headinxg="Enter the text to analyse" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/> }/>
