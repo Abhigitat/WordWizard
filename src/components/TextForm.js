@@ -28,10 +28,11 @@ export default function TextForm(props) {
         props.showAlert("TextBox is cleared","danger");
     }
     const handelCopy=()=>{
-        // let text=document.getElementById("myBox")
-        // text.select();
-        // document.execCommand("copy");
-        navigator.clipboard.writeText(text);
+        let text=document.getElementById("myBox")
+        text.select();
+        document.execCommand("copy");
+        document.getSelection().removeAllRanges();
+        // navigator.clipboard.writeText(text);
         props.showAlert("Text has Copied to Clipboard","success");
     }
     const handleRemoveTextSpace=()=>{
@@ -54,7 +55,7 @@ export default function TextForm(props) {
         <button disabled={text.length===0} className="btn btn-primary m-2" onClick={handleCpClick}>Convert to Capitalize</button>
         <button disabled={text.length===0} className="btn btn-primary m-2" onClick={handleRemoveTextSpace}>Remove Extra Spaces</button>
         <button disabled={text.length===0} className="btn btn-success m-2" onClick={handelCopy}>Copy Text</button>
-        <button disabled={text.length===0} className="btn btn-danger m-2" onClick={handleclr} onDoubleClick={cleartext}>Clear Text</button>
+        <button disabled={text.length===0} className="btn btn-danger m-2"  onClick={cleartext}>Clear Text</button>
         </div>
     </div>
     <div className="container">
@@ -66,6 +67,7 @@ export default function TextForm(props) {
     </>
   )
 }
+
 TextForm.defaultProps={
     heading:"Enter Text"
 }
