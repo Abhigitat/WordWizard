@@ -2,13 +2,13 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 
 function App() {
@@ -40,17 +40,14 @@ function App() {
   }
   return (
    <>
-   {/* <Router> */}
+   <Router>
       <Navbar titles="WordWizard" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>
       <Alert alert={alert}/>
-      {/* <Routes> */}
-          {/* <Route path="/about" element={<About mode={mode} toggleMode={toggleMode}/>}/> */}
-  
-          {/* <Route path="/" element={}/> */} 
-            
-            <TextForm headinxg="Enter the text to analyse" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>
-        {/* </Routes> */}
-      {/* </Router> */}
+      <Routes>
+          <Route path="/"  element={<TextForm heading="Enter the text to analyse" mode={mode} toggleMode={toggleMode} showAlert={showAlert}/>}/>
+          <Route path="/about" element={<About mode={mode} toggleMode={toggleMode}/>}/>
+        </Routes>
+      </Router>
    </>
   );
 }

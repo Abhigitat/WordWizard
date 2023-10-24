@@ -1,9 +1,9 @@
 import React from 'react'
 
 export default function About(props) {
-    let styling=props.mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"black",color:"white"}
+    let styling=props.mode==="light"?{backgroundColor:"white",color:"black"}:{backgroundColor:"#2e2e2e",color:"white"}
   return (
-    <div className="container" >
+    <div className="container my-3" >
         <h1>About us</h1>
         <div className="accordion my-3" id="accordionExample">
             <div className="accordion-item">
