@@ -39,9 +39,6 @@ export default function TextForm(props) {
         let newText=text.split(/[ ]+/);
         setText(newText.join(" "))
     }
-    const handleclr=()=>{
-        props.showAlert("Double Click to Clear the TextBox","danger")
-    }
 
     const [text,setText]=useState("");
   return (
